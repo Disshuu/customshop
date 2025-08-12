@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Shipping Information</h2>
+<form method="post">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+    <label>Address:</label><br>
+    <textarea name="address" required></textarea><br><br>
+    <button type="submit">Continue to Summary</button>
+</form>
+{% endblock %}

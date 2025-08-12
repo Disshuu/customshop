@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>🖼️ Preview Your Order</h2>
+
+<p><strong>Product:</strong> {{ order.product.name }}</p>
+<p><strong>Custom Text:</strong> {{ order.custom_text }}</p>
+<p><strong>Selected Color:</strong>
+    <span style="background-color: {{ order.color }}; padding: 0.5rem 1rem; border-radius: 6px; display: inline-block;">
+        {{ order.color }}
+    </span>
+</p>
+
+{% if order.uploaded_image %}
+    <img src="/{{ order.uploaded_image }}" width="200" style="border-radius: 10px; margin: 1rem 0;">
+{% endif %}
+
+<form method="POST">
+    <button class="btn" type="submit">Add to Cart</button>
+</form>
+{% endblock %}

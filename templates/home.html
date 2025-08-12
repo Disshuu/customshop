@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>✨ Explore Our Products</h2>
+<div class="products">
+    {% for product in products %}
+    <div class="product-card">
+        <img src="/{{ product.image_url }}" alt="{{ product.name }}">
+        <div class="content">
+            <h3>{{ product.name }}</h3>
+            <p>₹{{ product.price }}</p>
+            <a class="btn" href="{{ url_for('customize', product_id=product.id) }}">Customize</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<hr>
+
+{% if session.get('user_id') %}
+<h3>💬 Start a Chat</h3>
+<ul>
+  {% for user in users %}
+    {% if user.id != session.get('user_id') %}
+      <li><a href="{{ url_for('chat', user_id=user.id) }}">Chat with {{ user.username }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% else %}
+<p><a href="{{ url_for('login') }}">Login</a> to start chatting with other users.</p>
+{% endif %}
+{% endblock %}

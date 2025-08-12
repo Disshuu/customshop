@@ -1,0 +1,12 @@
+<!-- templates/checkout.html -->
+<h2>Confirm Items</h2>
+<ul>
+  {% for item in items %}
+    <li>{{ item.custom_order.product.name }} - ₹{{ item.custom_order.product.price }} x {{ item.quantity }}</li>
+  {% endfor %}
+</ul>
+<h3>Total: ₹{{ total }}</h3>
+
+<form action="{{ url_for('shipping') }}" method="get">
+    <button type="submit">Continue to Shipping Info</button>
+</form>

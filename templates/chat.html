@@ -1,0 +1,14 @@
+<h2>Chat with {{ recipient.username }}</h2>
+
+<div style="border:1px solid #ccc; padding:10px; max-height:300px; overflow-y:auto;">
+    {% for message in messages %}
+        <p><strong>{{ message.sender.username }}:</strong> {{ message.content }} <br><small>{{ message.timestamp }}</small></p>
+    {% endfor %}
+</div>
+
+<form method="POST">
+    <textarea name="content" placeholder="Type your message..." required style="width:100%;"></textarea>
+    <button type="submit">Send</button>
+</form>
+
+<a href="{{ url_for('home') }}">← Back to Home</a>

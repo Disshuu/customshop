@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>🎨 Customize: {{ product.name }}</h2>
+<form method="POST" enctype="multipart/form-data">
+    <label>Text on Product</label>
+    <input type="text" name="custom_text" placeholder="Enter custom text">
+
+    <label>Choose Color</label>
+    <input type="color" name="color">
+
+    <label>Upload Image</label>
+    <input type="file" name="image" accept="image/*">
+
+    <button class="btn" type="submit">Preview</button>
+</form>
+{% endblock %}

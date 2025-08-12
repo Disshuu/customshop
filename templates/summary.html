@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Order Summary</h2>
+
+<h4>Shipping To:</h4>
+<p>{{ name }}</p>
+<p>{{ address }}</p>
+
+<ul>
+  {% for item in items %}
+    <li>{{ item.custom_order.product.name }} x {{ item.quantity }} = ₹{{ item.custom_order.product.price * item.quantity }}</li>
+  {% endfor %}
+</ul>
+
+<form action="{{ url_for('thank_you') }}" method="post">
+    <button type="submit">Place Order</button>
+</form>
+{% endblock %}

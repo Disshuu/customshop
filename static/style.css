@@ -1,0 +1,231 @@
+/* 🎨 Custom Shop - Modern Aesthetic Styles */
+
+:root {
+    --primary: #ff6b81;
+    --primary-dark: #ff4757;
+    --background: #fdfbfb;
+    --card-bg: #ffffff;
+    --text-color: #2f3542;
+    --accent: #ffe4ec;
+    --success: #2ed573;
+    --success-dark: #1eae60;
+    --shadow: 0 10px 24px rgba(0,0,0,0.08);
+    --border-radius: 14px;
+    --font-main: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--background);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+/* -------- Header -------- */
+header {
+    background: var(--card-bg);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--primary);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+header h1 span {
+    margin-right: 0.5rem;
+    color: var(--text-color);
+}
+
+nav a {
+    margin-left: 1.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-dark);
+}
+
+/* -------- Container -------- */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+/* -------- Headings -------- */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* -------- Product Grid -------- */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+}
+
+/* -------- Product Card -------- */
+.product-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card .content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+.product-card p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* -------- Buttons -------- */
+.btn {
+    padding: 0.7rem 1.2rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-top: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+/* -------- Form Inputs -------- */
+form input[type="text"],
+form input[type="file"],
+form input[type="color"] {
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+/* -------- Cart Items -------- */
+.cart-item {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.2rem;
+    box-shadow: var(--shadow);
+}
+
+.cart-item h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+/* -------- Checkout -------- */
+.checkout {
+    text-align: right;
+    margin-top: 2rem;
+}
+
+.checkout .btn {
+    background: linear-gradient(135deg, var(--success), var(--success-dark));
+}
+
+.checkout .btn:hover {
+    background: linear-gradient(135deg, var(--success-dark), var(--success));
+}
+
+/* -------- Thank You Page -------- */
+.thank-you {
+    text-align: center;
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 3rem auto;
+}
+
+.thank-you h2 {
+    font-size: 2.4rem;
+    color: var(--success);
+}
+
+.thank-you p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #555;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav {
+        margin-top: 1rem;
+    }
+}
+/* -------- Form Inputs -------- */
+form input[type="text"],
+form input[type="file"],
+form input[type="color"],
+form input[type="email"],
+form input[type="password"] {
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    box-sizing: border-box; /* Yeh bhi add kiya, padding+border ka issue nahi hoga */
+}
+

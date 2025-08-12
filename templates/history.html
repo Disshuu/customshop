@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>📝 Order History</h2>
+{% for order in orders %}
+<div class="cart-item">
+    <p><strong>Product:</strong> {{ order.product.name }}</p>
+    <p><strong>Text:</strong> {{ order.custom_text }}</p>
+    <p><strong>Color:</strong> {{ order.color }}</p>
+</div>
+{% else %}
+<p>No orders yet.</p>
+{% endfor %}
+{% endblock %}
